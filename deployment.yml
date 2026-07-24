@@ -1,0 +1,96 @@
+repositories:
+
+  api:
+    folder: ganabosques-api
+    url: https://github.com/CIAT-DAPA/ganabosques_search_api.git
+    branch: develop
+    env_file: .env.example
+
+  app:
+    folder: ganabosques-app
+    url: https://github.com/CIAT-DAPA/ganabosques_app.git
+    branch: develop
+    env_file: .env.example
+
+    env_map:
+
+      NEXT_PUBLIC_KEYCLOAK_CLIENT_ID: KEYCLOAK_WEB_CLIENT_ID
+      NEXT_PUBLIC_KEYCLOAK_REALM: KEYCLOAK_REALM
+
+  web_admin:
+    folder: ganabosques-web-admin
+    url: https://github.com/CIAT-DAPA/ganabosques_web_admin.git
+    branch: develop
+    env_file: .env.example
+
+  etls:
+    folder: ganabosques-etls
+    url: https://github.com/CIAT-DAPA/ganabosques_etls_runner.git
+    branch: develop
+    env_file: .env.example
+
+keycloak:
+
+  realm: KEYCLOAK_REALM
+
+  roles:
+
+    - admin
+
+    - user
+
+  admin_user:
+
+    username: KEYCLOAK_ADMIN_USERNAME
+    password: KEYCLOAK_ADMIN_PASSWORD
+
+    first_name: KEYCLOAK_ADMIN_FIRST_NAME
+    last_name: KEYCLOAK_ADMIN_LAST_NAME
+
+    email: KEYCLOAK_ADMIN_EMAIL
+
+  clients:
+
+    web:
+
+      client_id: KEYCLOAK_WEB_CLIENT_ID
+
+      public: true
+
+      standard_flow: true
+
+      direct_access: true
+
+      service_accounts: false
+
+      subdomain: SUBDOMAIN_APP
+
+    admin:
+
+      client_id: KEYCLOAK_ADMIN_CLIENT_ID
+
+      secret: KEYCLOAK_ADMIN_CLIENT_SECRET
+
+      public: false
+
+      standard_flow: true
+
+      direct_access: true
+
+      service_accounts: true
+
+      subdomain: SUBDOMAIN_WEB_ADMIN
+
+    api:
+
+      client_id: KEYCLOAK_API_CLIENT_ID
+
+      secret: KEYCLOAK_API_CLIENT_SECRET
+
+      public: false
+
+      standard_flow: true
+
+      direct_access: true
+
+      service_accounts: true

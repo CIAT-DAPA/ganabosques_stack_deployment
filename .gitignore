@@ -1,0 +1,28 @@
+# Virtual environment
+env/
+.venv/
+venv/
+ENV/
+env.bak/
+venv.bak/
+workspace/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.env
+.venv
+*.zip
+.ipynb_checkpoints/
+.DS_Store
+tests/__pycache__/
+
+# Logs
+logs/
+*.log
+
+repos/*
+volumes/*
